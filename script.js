@@ -10,23 +10,17 @@ function grid(){
     containDiv.classList.add(`containDiv`)
     for(let j = 0; j < grids; j++){
         const div = document.createElement('div')
-        // div.setAttribute('style'')
         containDiv.append(div)
     }
 }
 
-//paint the boxes
-const allBox =  document.querySelectorAll('.containDiv div')
-allBox.forEach((box) =>{
-    box.addEventListener('mousemove', (event)=>{
-    if(event.button === 0 ){
-        console.log(event.button);
-        const box = event.target;
-        box.setAttribute('style', 'background-color: black;')
-    }
-})
-
-} )
+    //paint the boxes
+    const allBox =  document.querySelectorAll('.containDiv div')
+    allBox.forEach((box) =>{
+            box.addEventListener('click', (event)=>{
+            box.style.backgroundColor = "black";
+        })
+    })
 }
 //erase 
 eraseButton = document.querySelector('.erase')
@@ -38,14 +32,17 @@ eraseButton.addEventListener('click', () =>{
     })
 })
 
-
+//new grid
 const button = document.querySelector('.grid');
 button.addEventListener('click', () =>{
     const divs = document.querySelectorAll(".containDiv");
     divs.forEach((box)=>{
         box.remove()
     })
-    grids = +prompt("how many: ");
+    do{
+        grids = +prompt("how many: ");
+    }
+    while (grids >100)
     grid()
 })
 
