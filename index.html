@@ -6,11 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <button class="grid">New Grid</button>
-    <button class="erase">Erase</button>
+<!-- disable when dragging something on div -->
+<body ondragstart="return false;" ondrop="return false;">
+    <div class="centerBtn" >
+        <button class="grid">New Grid</button>
+        <button class="erase">Erase</button>
+    </div>
     <div class="container"></div>
-    
     <script src="script.js"></script>
 </body>
 </html>
