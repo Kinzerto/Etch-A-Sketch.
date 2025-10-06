@@ -1,7 +1,8 @@
 const container = document.querySelector('.container');
 
-let grids = 16
-grid()
+let grids = 16//default grid
+
+
 function grid(){
     console.log(grids);
     for(let i = 1; i <= grids; i++){
@@ -14,14 +15,27 @@ function grid(){
     }
 }
 
-    //paint the boxes
+
+    let isMouseDown = false;
+    // detect mouse hold 
+    document.addEventListener('mousedown', (e) => {
+        if (e.button === 0) isMouseDown = true;  // left button
+    });
+    document.addEventListener('mouseup', () => {
+        isMouseDown = false;
+    });
+
     const allBox =  document.querySelectorAll('.containDiv div')
     allBox.forEach((box) =>{
-            box.addEventListener('click', (event)=>{
-            box.style.backgroundColor = "black";
-        })
-    })
+        box.addEventListener('mouseenter', (event)=>{   
+        if(isMouseDown){
+                let colorGenerate= Math.trunc(Math.random() * 255) + 1;
+                box.style.backgroundColor = `rgb(${colorGenerate}, ${colorGenerate}, 161,40%)`;
+             } 
+         })
+    })   
 }
+grid()
 //erase 
 eraseButton = document.querySelector('.erase')
 
@@ -40,7 +54,7 @@ button.addEventListener('click', () =>{
         box.remove()
     })
     do{
-        grids = +prompt("how many: ");
+        grids = +prompt("How many Grid?(Limit 100): ");
     }
     while (grids >100)
     grid()
