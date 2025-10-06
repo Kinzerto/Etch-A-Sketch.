@@ -18,10 +18,10 @@ function grid(){
 
     let isMouseDown = false;
     // detect mouse hold 
-    document.addEventListener('mousedown', (e) => {
+    container.addEventListener('mousedown', (e) => {
         if (e.button === 0) isMouseDown = true;  // left button
     });
-    document.addEventListener('mouseup', () => {
+    container.addEventListener('mouseup', () => {
         isMouseDown = false;
     });
 
