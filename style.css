@@ -1,6 +1,19 @@
 .container{
     display: flex;
+    flex-direction: column;
+    height: 960px;
+    width: 960px;
+    border: 5px solid red;
 }
 .containDiv div:hover{
     background-color: red;
 }
+.containDiv{
+    display: flex;
+    height: 960px;
+}
+.containDiv div{
+    flex: 1;
+  
+}
+

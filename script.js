@@ -8,7 +8,7 @@ for(let i = 1; i <= grid; i++){
     for(let j = 0; j < grid; j++){
         const div = document.createElement('div')
         
-        div.setAttribute('style','height:20px; width:20px; border: 1px solid black;')
+        div.setAttribute('style','border: 1px solid black;')
         containDiv.append(div)
     }
 }
