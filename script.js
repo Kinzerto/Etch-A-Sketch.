@@ -28,7 +28,16 @@ allBox.forEach((box) =>{
 
 } )
 }
-// eraseButton = document.querySelector()
+//erase 
+eraseButton = document.querySelector('.erase')
+
+eraseButton.addEventListener('click', () =>{
+    box = document.querySelectorAll('.containDiv div');
+    box.forEach(box =>{
+        box.style.backgroundColor = "transparent";
+    })
+})
+
 
 const button = document.querySelector('.grid');
 button.addEventListener('click', () =>{
