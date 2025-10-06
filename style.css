@@ -1,8 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .container{
     display: flex;
     flex-direction: column;
-    height: 960px;
-    width: 960px;
+    height: 900px;
+    width: 900px;
     border: 5px solid red;
 }
 .containDiv div:hover{
@@ -10,13 +15,16 @@
 }
 .containDiv{
     display: flex;
-    height: 960px;
+    height: 100%;
 }
 .containDiv div{
     flex: 1;
+    border: 1px solid wheat;
 }
 .container button{
     flex-shrink: 1;
    
 }
+
+
 

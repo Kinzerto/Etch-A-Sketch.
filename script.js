@@ -1,8 +1,7 @@
 const container = document.querySelector('.container');
 
 let grids = 16
-
-
+grid()
 function grid(){
     console.log(grids);
     for(let i = 1; i <= grids; i++){
@@ -11,23 +10,36 @@ function grid(){
     containDiv.classList.add(`containDiv`)
     for(let j = 0; j < grids; j++){
         const div = document.createElement('div')
-        div.setAttribute('style','border: 1px solid black;')
+        // div.setAttribute('style'')
         containDiv.append(div)
     }
 }
+
+//paint the boxes
+const allBox =  document.querySelectorAll('.containDiv div')
+allBox.forEach((box) =>{
+    box.addEventListener('mousemove', (event)=>{
+    if(event.button === 0 ){
+        console.log(event.button);
+        const box = event.target;
+        box.setAttribute('style', 'background-color: black;')
+    }
+})
+
+} )
 }
+// eraseButton = document.querySelector()
 
-grid()
 const button = document.querySelector('.grid');
-
 button.addEventListener('click', () =>{
     const divs = document.querySelectorAll(".containDiv");
-    divs.forEach((divko)=>{
-        divko.remove()
+    divs.forEach((box)=>{
+        box.remove()
     })
     grids = +prompt("how many: ");
     grid()
 })
+
 
 
 
