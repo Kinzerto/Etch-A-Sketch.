@@ -37,8 +37,8 @@ function grid(){
 }
 grid()
 //erase 
-eraseButton = document.querySelector('.erase')
 
+eraseButton = document.querySelector('.erase')
 eraseButton.addEventListener('click', () =>{
     box = document.querySelectorAll('.containDiv div');
     box.forEach(box =>{
@@ -53,10 +53,17 @@ button.addEventListener('click', () =>{
     divs.forEach((box)=>{
         box.remove()
     })
+    let howMany = 0
     do{
-        grids = +prompt("How many Grid?(Limit 100): ");
+        howMany = +prompt("How many Grid?(Limit 100): ");
+    if(howMany === 0){
+        grids = grids
+    }else{
+        grids = howMany
     }
-    while (grids >100)
+    }while(howMany >=100);
+      
+
     grid()
 })
 
